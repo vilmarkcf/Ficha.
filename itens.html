@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<style>
+    h1 {
+    cursor: pointer;
+    background-color:#ece1a6;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+h1:hover {
+    background-color:#ece1a6;
+}
+
+#esc{
+    display: none;
+}
+</style>
+
+<body>
+    <div class="boxNav">
+       <section>
+      <div class="conteiner" id="co">
+        <img id="im" src="caveira.png.png" alt="">
+      </div>
+
+        <h1 id="iv">Inventario</h1>
+        <div class="navBar">
+            <button onclick="voltarParaPrincipal()">Voltar para Ficha Principal</button>
+            <script>
+                function voltarParaPrincipal() {
+                    window.location.href = "index.html";
+                }
+            </script>
+
+            <button onclick="irParaHabilidades()">Ir para Habilidades</button>
+            <script>
+                function irParaHabilidades() {
+                    window.location.href = "habilidades.html";
+                }
+            </script>
+
+
+            <button onclick="irParaMontaria()">Ir para Montaria</button>
+            <script>
+                function irParaMontaria() {
+                    window.location.href = "montaria.html";
+                }
+            </script>
+
+        </div>
+    </div>
+    <div class="ficha">
+        <section class="inventario">
+            <table class="tabela-itens">
+                <thead>
+                    <tr>
+                        <th>Itens</th>
+                        <th>Espaço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="itens"><input type="text"></td>
+                        <td class="Espaço"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="itens"><input type="text"></td>
+                        <td class="Espaço"><input type="text"></td>
+                    </tr>
+                    <td class="itens"><input type="text"></td>
+                    <td class="Espaço"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="itens"><input type="text"></td>
+                        <td class="Espaço"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="itens"><input type="text"></td>
+                        <td class="Espaço"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="itens"><input type="text"></td>
+                        <td class="Espaço"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="itens"><input type="text"></td>
+                        <td class="Espaço"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="itens"><input type="text"></td>
+                        <td class="Espaço"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="itens"><input type="text"></td>
+                        <td class="Espaço"><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="tabela-armas">
+                <thead>
+                    <tr>
+                        <th>Armas</th>
+                        <th>Espaço</th>
+                        <th>Dano</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="arma"><input type="text"></td>
+                        <td class="Esp"><input type="text"></td>
+                        <td class="dano"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="arma"><input type="text"></td>
+                        <td class="Esp"><input type="text"></td>
+                        <td class="dano"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="arma"><input type="text"></td>
+                        <td class="Esp"><input type="text"></td>
+                        <td class="dano"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="arma"><input type="text"></td>
+                        <td class="Esp"><input type="text"></td>
+                        <td class="dano"><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <div class="ficha">
+
+        <h1>Itens</h1>
+        <table class=" tabela-armas" id="esc">
+            <thead>
+                <tr>
+                    <th>Armas</th>
+                    <th>Espaço</th>
+                    <th>Dano</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="arma">
+                        <h5>sdgdfgdfgdfg</h5>
+                    </td>
+                    <td class="Esp">
+                        <h5>sdgdfgdfgdfg</h5>
+                    </td>
+                    <td class="dano">
+                        <h5>sdgdfgdfgdfg</h5>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h1>Itens</h1>
+        <table class=" tabela-armas" id="esc">
+            <thead>
+                <tr>
+                    <th>Armas</th>
+                    <th>Espaço</th>
+                    <th>Dano</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="arma">
+                        <h5>sdgdfgdfgdfg</h5>
+                    </td>
+                    <td class="Esp">
+                        <h5>sdgdfgdfgdfg</h5>
+                    </td>
+                    <td class="dano">
+                        <h5>sdgdfgdfgdfg</h5>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+<script src="scripts/it.js"></script>
+
+</html>

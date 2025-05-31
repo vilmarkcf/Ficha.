@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de Montaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="boxNav">
+
+        <section>
+            <div class="conteiner" id="co4">
+                <img id="im4" src="cavl.png" alt="">
+            </div>
+        </section>
+
+        <div id="bt" class="navBar">
+            <button onclick="voltarParaPrincipal()">Voltar para Ficha Principal</button>
+            <script>
+                function voltarParaPrincipal() {
+                    window.location.href = "index.html";
+                }
+            </script>
+
+            <button onclick="irParaHabilidades()">Ir para Habilidades</button>
+            <script>
+                function irParaHabilidades() {
+                    window.location.href = "habilidades.html";
+                }
+            </script>
+
+        
+      <button onclick="verItens()">inventario</button>
+
+      <script>
+        function verItens() {
+          window.location.href = "itens.html";
+        }
+      </script>
+
+        </div>
+    </div>
+
+    <div class="ficha">
+
+        <h2>Montaria</h2>
+
+            <section>
+            <div class="conteiner" id="co5">
+                <img id="im5" src="cela.png" alt="">
+            </div>
+        </section>
+
+        <section class="montaria">
+            <label>Nome: <input type="text" class="grande"></label>
+
+            <div class="atributos-montaria">
+                <label>Potência: <input type="number" min="0" max="3"></label>
+                <label>Resistência: <input type="number" min="0" max="3"></label>
+            </div>
+
+             <div class="circulos">
+      <div class="dor">
+        <strong>Círculos de Dor:</strong>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+      </div>
+    </div>
+    <div class="Vida">
+      <button id="mv" onclick="adicionarCheckbox()">+</button>
+      <button id="nv" onclick="removerCheckbox()">-</button>
+      <strong id="vida">Círculos de Vida:</strong>
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div> <br>
+
+            <div class="fidelidade">
+                <h3>Nível de Fidelidade</h3>
+                <ol>
+                    <li>Montaria estranha: sem bônus.</li>
+                    <li>Atende quando chamada pelo nome.</li>
+                    <li>Ganha +1 ponto em um dos Atributos à sua escolha.</li>
+                    <li>Quando chamada, vai até você se estiver dentro de 500m de raio.</li>
+                    <li>Sem penalidades para saltar obstáculos perigosos.</li>
+                    <li>Ganha +1 ponto em um dos Atributos à sua escolha.</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+    <script src="montaria.js"></script>
+</body>
+
+</html>
