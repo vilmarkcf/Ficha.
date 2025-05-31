@@ -52,41 +52,53 @@ function validarAntecedentes() {
 
   // Salvar automaticamente ao mudar inputs
 document.querySelectorAll('input, textarea').forEach(el => {
-    el.addEventListener('input', () => {
-      salvarFicha();
-    });
+  el.addEventListener('input', salvarFicha);
+});
+
+function salvarFicha() {
+  const dados = {
+    nome: getValue('nome'),
+    fisico: getValue('fisico'),
+    velocidade: getValue('velocidade'),
+    intelecto: getValue('intelecto'),
+    coragem: getValue('coragem'),
+    habilidades: getValue('habilidades'),
+    antecedentes: Array.from(document.querySelectorAll('.antecedente')).map(input => input.value || '')
+  };
+  localStorage.setItem('fichaRPG', JSON.stringify(dados));
+}
+
+function carregarFicha() {
+  const dados = JSON.parse(localStorage.getItem('fichaRPG'));
+  if (!dados) return;
+
+  setValue('nome', dados.nome);
+  setValue('fisico', dados.fisico);
+  setValue('velocidade', dados.velocidade);
+  setValue('intelecto', dados.intelecto);
+  setValue('coragem', dados.coragem);
+  setValue('habilidades', dados.habilidades);
+
+  const antecedentesInputs = document.querySelectorAll('.antecedente');
+  antecedentesInputs.forEach((input, i) => {
+    input.value = dados.antecedentes?.[i] || '';
   });
-  
-  function salvarFicha() {
-    const dados = {
-      nome: document.getElementById('nome').value,
-      fisico: document.getElementById('fisico').value,
-      velocidade: document.getElementById('velocidade').value,
-      intelecto: document.getElementById('intelecto').value,
-      coragem: document.getElementById('coragem').value,
-      habilidades: document.getElementById('habilidades').value,
-      antecedentes: Array.from(document.querySelectorAll('.antecedente')).map(input => input.value)
-    };
-    localStorage.setItem('fichaRPG', JSON.stringify(dados));
-  }
-  
-  function carregarFicha() {
-    const dados = JSON.parse(localStorage.getItem('fichaRPG'));
-    if (!dados) return;
-  
-    document.getElementById('nome').value = dados.nome || '';
-    document.getElementById('fisico').value = dados.fisico || 0;
-    document.getElementById('velocidade').value = dados.velocidade || 0;
-    document.getElementById('intelecto').value = dados.intelecto || 0;
-    document.getElementById('coragem').value = dados.coragem || 0;
-    document.getElementById('habilidades').value = dados.habilidades || '';
-    
-    const antecedentes = document.querySelectorAll('.antecedente');
-    antecedentes.forEach((input, i) => {
-      input.value = dados.antecedentes?.[i] || 0;
-    });
-  }
-  
+}
+
+// Helpers
+function getValue(id) {
+  const el = document.getElementById(id);
+  return el ? el.value : '';
+}
+
+function setValue(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.value = val || '';
+}
+
+// Carrega automaticamente ao abrir
+window.addEventListener('load', carregarFicha);
+
  
 /*vida */
 
@@ -110,4 +122,6 @@ function removerCheckbox() {
         container.removeChild(ultimo);
     } 
 }
+
+
 
