@@ -55,6 +55,7 @@ function adicionarCheckbox() {
     if (checkboxes.length < 20) {
         const novoCheckbox = document.createElement('input');
         novoCheckbox.type = 'checkbox';
+        novoCheckbox.classList.add('adicionado');
         container.appendChild(novoCheckbox);
     }
 }
